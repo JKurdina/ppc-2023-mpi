@@ -30,6 +30,7 @@ int get_sum_parallel(const std::vector<int>& M, int lines)
 
   int size = M.size() / procNum;
   int ost = M.size() % procNum;
+
   std::vector<int> new_M(size * lines);
 
   if (procRank == 0)
