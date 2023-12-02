@@ -88,7 +88,6 @@ TEST(Parallel_Operations_MPI, Test_Rand_Matrix_2) {
     M = get_rand_matrix(columns, rows, l, r);
   }
   int parallel_sum = get_sum_parallel(M, rows);
-  
   if (ProcRank == 0) {
     int sequential_sum = get_sum(M);
     ASSERT_EQ(sequential_sum, parallel_sum);
