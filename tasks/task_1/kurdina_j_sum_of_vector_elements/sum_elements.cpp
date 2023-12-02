@@ -38,7 +38,7 @@ int get_sum_parallel(const std::vector<int>& M, int lines) {
     }
     new_M.resize((size + ost) * lines);
   }
-  MPI_Scatterv(M.data(), sendcounts.data(), displs.data(), MPI_INT, 
+  MPI_Scatterv(M.data(), sendcounts.data(), displs.data(), MPI_INT,
     new_M.data(), new_M.size(), MPI_INT, 0, MPI_COMM_WORLD);
   summa = 0;
   sum_all = 0;
